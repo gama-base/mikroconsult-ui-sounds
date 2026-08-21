@@ -22,7 +22,10 @@
   .samples { display:flex; flex-direction:column; gap:10px; }
   .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
   .samples figcaption { font-size:14px; color:var(--ink); font-weight:600; }
-  audio { width:180px; height:32px; }
+  audio { width:100%; max-width:280px; height:40px; }
+  .playbtn { border:0; background:#1F6F5B; color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:10px 16px; cursor:pointer; }
+  .playbtn:hover { background:#165A49; }
+  .samples figure { flex-wrap:wrap; }
   .buy { color:var(--teal); font-weight:700; font-size:13px; text-decoration:none; white-space:nowrap; }
   .buy:hover { text-decoration:underline; }
   .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; margin-top:16px; }
@@ -38,10 +41,26 @@
       <h1>Hear the button sounds</h1>
       <p class="lead">Four clicks from the free pack. If you like the style, grab the zip for $0.</p>
       <div class="samples">
-        <figure><figcaption>A normal click</figcaption><audio controls preload="none" src="samples/click_primary.wav"></audio></figure>
-        <figure><figcaption>Success</figcaption><audio controls preload="none" src="samples/success.wav"></audio></figure>
-        <figure><figcaption>Toggle on</figcaption><audio controls preload="none" src="samples/toggle_on.wav"></audio></figure>
-        <figure><figcaption>A notify ping</figcaption><audio controls preload="none" src="samples/notify.wav"></audio></figure>
+        <figure>
+          <figcaption>A normal click</figcaption>
+          <button type="button" class="playbtn" data-play="samples/click_primary.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/click_primary.mp3" type="audio/mpeg"><source src="samples/click_primary.wav" type="audio/wav"></audio>
+        </figure>
+        <figure>
+          <figcaption>Success</figcaption>
+          <button type="button" class="playbtn" data-play="samples/success.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/success.mp3" type="audio/mpeg"><source src="samples/success.wav" type="audio/wav"></audio>
+        </figure>
+        <figure>
+          <figcaption>Toggle on</figcaption>
+          <button type="button" class="playbtn" data-play="samples/toggle_on.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/toggle_on.mp3" type="audio/mpeg"><source src="samples/toggle_on.wav" type="audio/wav"></audio>
+        </figure>
+        <figure>
+          <figcaption>A notify ping</figcaption>
+          <button type="button" class="playbtn" data-play="samples/notify.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/notify.mp3" type="audio/mpeg"><source src="samples/notify.wav" type="audio/wav"></audio>
+        </figure>
       </div>
       <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free pack</a>
     </header>
@@ -52,27 +71,32 @@
       <div class="samples">
         <figure>
           <figcaption>Glassy · Soft Glass</figcaption>
-          <audio controls preload="none" src="samples/glass_tap.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/glass_tap.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/glass_tap.mp3" type="audio/mpeg"><source src="samples/glass_tap.wav" type="audio/wav"></audio>
           <a class="buy" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy · $1+</a>
         </figure>
         <figure>
           <figcaption>Clicky · Crisp Pro</figcaption>
-          <audio controls preload="none" src="samples/crisp_click.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/crisp_click.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/crisp_click.mp3" type="audio/mpeg"><source src="samples/crisp_click.wav" type="audio/wav"></audio>
           <a class="buy" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy · $1+</a>
         </figure>
         <figure>
           <figcaption>Playful · Retro Soft</figcaption>
-          <audio controls preload="none" src="samples/retro_coin.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/retro_coin.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/retro_coin.mp3" type="audio/mpeg"><source src="samples/retro_coin.wav" type="audio/wav"></audio>
           <a class="buy" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy · $1+</a>
         </figure>
         <figure>
           <figcaption>Quiet · Deep Minimal</figcaption>
-          <audio controls preload="none" src="samples/min_confirm.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/min_confirm.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/min_confirm.mp3" type="audio/mpeg"><source src="samples/min_confirm.wav" type="audio/wav"></audio>
           <a class="buy" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy · $1+</a>
         </figure>
       </div>
     </section>
-    <p class="foot">Full zips (18 / 18 / 16 / 14 WAV) after checkout. More on the <a href="./" style="color:var(--teal);font-weight:600;text-decoration:none">store page</a>.</p>
+    <p class="foot">Full zips after checkout. More on the <a href="./" style="color:var(--teal);font-weight:600;text-decoration:none">store page</a>.</p>
   </div>
+  <script src="play.js"></script>
 </body>
 </html>

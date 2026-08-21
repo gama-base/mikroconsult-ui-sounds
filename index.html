@@ -30,7 +30,9 @@
   .sub { margin:0; color:var(--muted); font-size:13px; }
   .blurb { margin:2px 0 8px; color:#3F3A34; font-size:14px; flex:1; }
   .listen { margin:4px 0 0; font-size:12px; font-weight:700; color:var(--free); }
-  audio { width:100%; height:36px; margin:4px 0 10px; }
+  audio { width:100%; height:40px; margin:4px 0 8px; }
+  .playbtn { border:0; background:var(--free); color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:10px 14px; cursor:pointer; margin:4px 0 8px; width:100%; }
+  .playbtn:hover { background:#165A49; }
   .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; }
   .btn.free { background:var(--free); }
   .btn:hover { background:var(--accent2); }
@@ -57,7 +59,8 @@
           <p class="sub">12 button sounds</p>
           <p class="blurb">Normal clicks for apps and prototypes.</p>
           <p class="listen">Hear a click</p>
-          <audio controls preload="none" src="samples/click_primary.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/click_primary.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/click_primary.mp3" type="audio/mpeg"><source src="samples/click_primary.wav" type="audio/wav"></audio>
           <a class="btn free" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get free</a>
         </div>
       </article>
@@ -68,7 +71,8 @@
           <p class="sub">18 quiet, glassy clicks</p>
           <p class="blurb">Softer, with a little ring. For calm apps.</p>
           <p class="listen">Hear the glassy one</p>
-          <audio controls preload="none" src="samples/glass_tap.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/glass_tap.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/glass_tap.mp3" type="audio/mpeg"><source src="samples/glass_tap.wav" type="audio/wav"></audio>
           <a class="btn" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy Soft Glass</a>
         </div>
       </article>
@@ -79,7 +83,8 @@
           <p class="sub">18 short, clicky sounds</p>
           <p class="blurb">Snappy. For tools and dashboards.</p>
           <p class="listen">Hear the clicky one</p>
-          <audio controls preload="none" src="samples/crisp_click.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/crisp_click.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/crisp_click.mp3" type="audio/mpeg"><source src="samples/crisp_click.wav" type="audio/wav"></audio>
           <a class="btn" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy Crisp Pro</a>
         </div>
       </article>
@@ -90,7 +95,8 @@
           <p class="sub">16 warm, playful beeps</p>
           <p class="blurb">Old-handheld feeling, without the headache.</p>
           <p class="listen">Hear the playful one</p>
-          <audio controls preload="none" src="samples/retro_coin.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/retro_coin.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/retro_coin.mp3" type="audio/mpeg"><source src="samples/retro_coin.wav" type="audio/wav"></audio>
           <a class="btn" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy Retro Soft</a>
         </div>
       </article>
@@ -101,7 +107,8 @@
           <p class="sub">14 quiet confirms</p>
           <p class="blurb">A tiny “yes, that worked.” No sparkle.</p>
           <p class="listen">Hear the quiet one</p>
-          <audio controls preload="none" src="samples/min_confirm.wav"></audio>
+          <button type="button" class="playbtn" data-play="samples/min_confirm.mp3">Play</button>
+          <audio controls preload="metadata"><source src="samples/min_confirm.mp3" type="audio/mpeg"><source src="samples/min_confirm.wav" type="audio/wav"></audio>
           <a class="btn" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy Deep Minimal</a>
         </div>
       </article>
@@ -157,5 +164,6 @@
     </section>
     <p class="foot">Checkout is on Gumroad. Listen here, then buy if the style fits. <a href="demo.html">All sound samples</a> · <a href="icons.html">Icon gallery</a>.</p>
   </div>
+  <script src="play.js"></script>
 </body>
 </html>
