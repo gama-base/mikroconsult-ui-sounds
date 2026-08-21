@@ -30,8 +30,8 @@
   .samples { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 6px; }
   .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
   .samples figcaption { font-size:12px; color:var(--muted); margin-bottom:6px; }
-  audio { width:100%; max-width:240px; height:40px; }
-  .playbtn { border:0; background:#1F6F5B; color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:8px 14px; cursor:pointer; }
+  audio { width:100%; max-width:280px; height:44px; display:block; position:relative; z-index:2; }
+  .playbtn { border:0; background:#1F6F5B; color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:10px 14px; cursor:pointer; width:100%; max-width:280px; position:relative; z-index:2; }
   .cta { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
   .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 16px; }
   .btn:hover { background:var(--teal2); }
@@ -64,23 +64,23 @@
       <div class="samples">
         <figure>
           <figcaption>click</figcaption>
-          <button type="button" class="playbtn" data-play="samples/click_primary.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/click_primary.mp3" type="audio/mpeg"><source src="samples/click_primary.wav" type="audio/wav"></audio>
+          <audio controls preload="auto" playsinline src="samples/click_primary.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
         </figure>
         <figure>
           <figcaption>success</figcaption>
-          <button type="button" class="playbtn" data-play="samples/success.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/success.mp3" type="audio/mpeg"><source src="samples/success.wav" type="audio/wav"></audio>
+          <audio controls preload="auto" playsinline src="samples/success.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
         </figure>
         <figure>
           <figcaption>toggle</figcaption>
-          <button type="button" class="playbtn" data-play="samples/toggle_on.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/toggle_on.mp3" type="audio/mpeg"><source src="samples/toggle_on.wav" type="audio/wav"></audio>
+          <audio controls preload="auto" playsinline src="samples/toggle_on.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
         </figure>
         <figure>
           <figcaption>notify</figcaption>
-          <button type="button" class="playbtn" data-play="samples/notify.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/notify.mp3" type="audio/mpeg"><source src="samples/notify.wav" type="audio/wav"></audio>
+          <audio controls preload="auto" playsinline src="samples/notify.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
         </figure>
       </div>
 
@@ -102,6 +102,20 @@
     </article>
     <p class="foot"><a href="./" style="color:inherit">All products</a> · <a href="obsidian-second-brain.html" style="color:inherit">Obsidian vault</a> · <a href="svg-line-icons.html" style="color:inherit">Line icons</a> · <a href="claude-cursor-skills.html" style="color:inherit">Skills</a></p>
   </div>
-  <script src="play.js"></script>
+<script>
+document.addEventListener("click", function (e) {
+  var b = e.target.closest(".playbtn");
+  if (!b) return;
+  e.preventDefault();
+  var a = b.parentNode.querySelector("audio");
+  if (!a) return;
+  a.currentTime = 0;
+  var p = a.play();
+  if (p && p.then) {
+    p.then(function () { b.textContent = "Play again"; })
+     .catch(function () { b.textContent = "Could not play — use the bar above"; });
+  }
+});
+</script>
 </body>
 </html>
