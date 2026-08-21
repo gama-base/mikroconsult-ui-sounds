@@ -7,9 +7,10 @@ Original interface sounds for apps, Figma prototypes, and games.
 | Pack | Price | Checkout |
 |------|-------|----------|
 | Solo OS Lite (second brain) | Free / tip | [Gumroad](https://mikroconsult.gumroad.com/l/solo-os-lite) |
-| Solo OS (shop + brain) | $9+ | [Gumroad](https://mikroconsult.gumroad.com/l/solo-os) |
-| Line Icons (82 SVG) | $9+ | [Gumroad](https://mikroconsult.gumroad.com/l/line-icons) |
-| Mikro Skills (12 SKILL.md) | $12+ | [Gumroad](https://mikroconsult.gumroad.com/l/mikro-skills) |
+| Solo OS (shop + brain) | $7+ | [Gumroad](https://mikroconsult.gumroad.com/l/solo-os) |
+| Line Icons (82 SVG) | $7+ | [Gumroad](https://mikroconsult.gumroad.com/l/line-icons) |
+| Mikro Skills (12 SKILL.md) | $9+ | [Gumroad](https://mikroconsult.gumroad.com/l/mikro-skills) |
+| Master Prompts (14 charters) | $7+ | [Gumroad](https://mikroconsult.gumroad.com/l/master-prompts) |
 | Essential UI (12 sounds) | Free / tip | [Gumroad](https://mikroconsult.gumroad.com/l/free-ui-sounds) |
 | Soft Glass (18) | $1+ | [Gumroad](https://mikroconsult.gumroad.com/l/glass-ui-sounds) |
 | Crisp Pro (18) | $1+ | [Gumroad](https://mikroconsult.gumroad.com/l/crisp-ui-sounds) |
