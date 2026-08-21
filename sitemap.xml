@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gama-base.github.io/mikroconsult-ui-sounds/</loc></url>
-  <url><loc>https://gama-base.github.io/mikroconsult-ui-sounds/icons.html</loc></url>
-  <url><loc>https://gama-base.github.io/mikroconsult-ui-sounds/demo.html</loc></url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/free-ui-sounds.html</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/obsidian-second-brain.html</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/svg-line-icons.html</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/claude-cursor-skills.html</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/icons.html</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://gama-base.github.io/mikroconsult-ui-sounds/demo.html</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
 </urlset>
