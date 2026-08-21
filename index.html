@@ -3,182 +3,159 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>mikroconsult — small digital tools</title>
-<meta name="description" content="UI sounds, a markdown shop OS, line icons, and agent skills. Free starters. Paid from $1."/>
+<title>mikroconsult — small tools</title>
+<meta name="description" content="Button sounds, a notes folder for your shop, simple icons, and prompts for your AI. Listen before you buy."/>
 <link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/"/>
-<meta property="og:title" content="mikroconsult — UI sound effects (WAV)"/>
-<meta property="og:description" content="Free starter pack + $1 UI sound kits. Original WAV, commercial use OK."/>
-<meta property="og:image" content="https://gama-base.github.io/mikroconsult-ui-sounds/cover.png"/>
 <style>
-  :root { --bg:#E8E2D6; --paper:#FAF7F2; --ink:#1C1917; --muted:#57534E; --line:#D6D3D1; --teal:#0F766E; --teal2:#115E59; }
+  :root { --bg:#F6F0E6; --paper:#FFFbf6; --ink:#221C16; --muted:#6F655A; --line:#E6D9C8; --accent:#C24E2C; --accent2:#9A3412; --free:#1F6F5B; }
   * { box-sizing:border-box; }
   body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
   .wrap { max-width:980px; margin:0 auto; padding:36px 18px 72px; }
-  .hero { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:32px 26px; margin-bottom:22px; }
+  .hero { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:32px 26px; margin-bottom:22px; box-shadow:0 8px 28px rgba(34,28,22,.06); }
   .nav { margin:0 0 14px; font-size:13px; }
-  .nav a { color:var(--teal); text-decoration:none; font-weight:600; }
-  .nav a:hover { text-decoration:underline; }
+  .nav a { color:var(--free); text-decoration:none; font-weight:600; }
   .nav span { color:var(--line); margin:0 8px; }
-  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700; }
-  h1 { margin:0 0 10px; font-size:clamp(1.7rem,4vw,2.35rem); line-height:1.15; }
-  .lead { margin:0 0 16px; color:var(--muted); max-width:40rem; }
-  .samples { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 0; }
-  .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
-  .samples figcaption { font-size:12px; color:var(--muted); margin-bottom:6px; }
-  audio { width:160px; height:32px; }
-  .buy { display:inline-block; margin-top:6px; color:var(--teal); font-weight:700; font-size:12px; text-decoration:none; }
-  .buy:hover { text-decoration:underline; }
-  .paid-row { margin-top:16px; }
-  .paid-row .eyebrow { margin-bottom:8px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; }
-  .card { background:var(--paper); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; }
-  .body { padding:16px 16px 18px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--free); font-weight:700; }
+  h1 { margin:0 0 10px; font-size:clamp(1.7rem,4vw,2.4rem); line-height:1.15; }
+  .lead { margin:0; color:var(--muted); max-width:38rem; }
+  .sec { margin:6px 0 12px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; margin-bottom:28px; }
+  .card { background:var(--paper); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 4px 16px rgba(34,28,22,.05); }
+  .thumb { display:block; }
+  .thumb img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
+  .body { padding:14px 14px 16px; display:flex; flex-direction:column; gap:6px; flex:1; }
   .row { display:flex; justify-content:space-between; gap:8px; align-items:baseline; }
   h2 { margin:0; font-size:1.12rem; }
-  .price { color:var(--teal); font-weight:800; }
+  .price { color:var(--accent); font-weight:800; }
   .sub { margin:0; color:var(--muted); font-size:13px; }
-  .blurb { margin:2px 0 10px; color:#44403C; font-size:14px; flex:1; }
-  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; }
-  .btn:hover { background:var(--teal2); }
-  .foot { margin-top:22px; color:var(--muted); font-size:13px; }
-  .notes { margin-top:22px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:16px 20px 18px; }
-  .notes ul { margin:8px 0 0; padding:0; list-style:none; }
-  .notes li { margin:7px 0; color:var(--muted); font-size:14px; }
-  .notes a { color:var(--teal2); font-weight:600; text-decoration:none; }
-  .notes a:hover { text-decoration:underline; }
+  .blurb { margin:2px 0 8px; color:#3F3A34; font-size:14px; flex:1; }
+  .listen { margin:4px 0 0; font-size:12px; font-weight:700; color:var(--free); }
+  audio { width:100%; height:36px; margin:4px 0 10px; }
+  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; }
+  .btn.free { background:var(--free); }
+  .btn:hover { background:var(--accent2); }
+  .btn.free:hover { background:#165A49; }
+  .foot { color:var(--muted); font-size:13px; }
+  .foot a { color:var(--free); font-weight:600; text-decoration:none; }
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ItemList",
-  "name":"mikroconsult digital tools",
-  "url":"https://gama-base.github.io/mikroconsult-ui-sounds/",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Essential UI Sounds","description":"12 original 44.1 kHz WAV UI clicks. Free, commercial use OK.","url":"https://gama-base.github.io/mikroconsult-ui-sounds/free-ui-sounds.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/free-ui-sounds"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Soft Glass UI Sounds","offers":{"@type":"Offer","price":"1","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/glass-ui-sounds"}}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Crisp Pro UI Sounds","offers":{"@type":"Offer","price":"1","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/crisp-ui-sounds"}}},
-    {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Retro Soft UI Sounds","offers":{"@type":"Offer","price":"1","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/retro-ui-sounds"}}},
-    {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Deep Minimal UI Sounds","offers":{"@type":"Offer","price":"1","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/minimal-ui-sounds"}}},
-    {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"Solo OS Lite","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/solo-os-lite"}}},
-    {"@type":"ListItem","position":7,"item":{"@type":"Product","name":"Solo OS","offers":{"@type":"Offer","price":"9","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/solo-os"}}},
-    {"@type":"ListItem","position":8,"item":{"@type":"Product","name":"Line Icons","description":"82 original SVG + PNG marks on a 24px grid.","url":"https://gama-base.github.io/mikroconsult-ui-sounds/icons.html","offers":{"@type":"Offer","price":"9","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/line-icons"}}},
-    {"@type":"ListItem","position":9,"item":{"@type":"Product","name":"Mikro Skills","offers":{"@type":"Offer","price":"12","priceCurrency":"USD","url":"https://mikroconsult.gumroad.com/l/mikro-skills"}}}
-  ]
-}
-</script>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <p class="nav"><a href="./">Store</a><span>·</span><a href="icons.html">Line icons</a><span>·</span><a href="demo.html">Sound samples</a></p>
+      <p class="nav"><a href="./">Store</a><span>·</span><a href="icons.html">Icons</a><span>·</span><a href="demo.html">Listen</a><span>·</span><a href="prompts.html">Prompts</a></p>
       <p class="eyebrow">mikroconsult</p>
-      <h1>Small tools for a one-person shop</h1>
-      <p class="lead">UI clicks, a folder that works as a second brain, a line-icon set, and twelve skills for Claude/Cursor/Grok. Free starters. The rest is a few dollars.</p>
-      <div class="samples">
-        <figure><figcaption>click</figcaption><audio controls preload="none" src="samples/click_primary.wav"></audio></figure>
-        <figure><figcaption>success</figcaption><audio controls preload="none" src="samples/success.wav"></audio></figure>
-        <figure><figcaption>toggle</figcaption><audio controls preload="none" src="samples/toggle_on.wav"></audio></figure>
-        <figure><figcaption>notify</figcaption><audio controls preload="none" src="samples/notify.wav"></audio></figure>
-      </div>
-      <div class="paid-row">
-        <p class="eyebrow">hear the paid engines</p>
-        <div class="samples">
-          <figure>
-            <figcaption>glass_tap</figcaption>
-            <audio controls preload="none" src="samples/glass_tap.wav"></audio>
-            <a class="buy" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy</a>
-          </figure>
-          <figure>
-            <figcaption>crisp_click</figcaption>
-            <audio controls preload="none" src="samples/crisp_click.wav"></audio>
-            <a class="buy" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy</a>
-          </figure>
-          <figure>
-            <figcaption>retro_coin</figcaption>
-            <audio controls preload="none" src="samples/retro_coin.wav"></audio>
-            <a class="buy" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy</a>
-          </figure>
-          <figure>
-            <figcaption>min_confirm</figcaption>
-            <audio controls preload="none" src="samples/min_confirm.wav"></audio>
-            <a class="buy" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy</a>
-          </figure>
-        </div>
-      </div>
+      <h1>Small tools. Press play before you buy.</h1>
+      <p class="lead">Sounds for buttons, a notes folder for your shop, simple icons, and jobs for your AI. The free ones are $0. The rest is a few dollars.</p>
     </header>
+
+    <p class="sec">Sounds — hear the style</p>
     <section class="grid">
-      <article class="card"><div class="body">
-        <div class="row"><h2>Solo OS Lite</h2><span class="price">Free / tip</span></div>
-        <p class="sub">Markdown vault · Obsidian / any folder</p>
-        <p class="blurb">A folder, not twelve empty databases. Daily note, weekly review, one ship.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/solo-os-lite">Get the free vault</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Solo OS</h2><span class="price">$9+</span></div>
-        <p class="sub">Second brain + shop OS</p>
-        <p class="blurb">Same vault, plus the stall: what you sell, the pipeline, money, ten people.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/solo-os">Buy Solo OS</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Line Icons</h2><span class="price">$9+</span></div>
-        <p class="sub">82 original SVG + PNG</p>
-        <p class="blurb">Drawn on a 24px grid. Same stroke on every mark. Not a Lucide recut. <a href="icons.html" style="color:var(--teal);font-weight:600;text-decoration:none">Browse all 82</a>.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/line-icons">Buy icons</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Mikro Skills</h2><span class="price">$12+</span></div>
-        <p class="sub">12 SKILL.md for Claude / Cursor / Grok</p>
-        <p class="blurb">Twelve SKILL.md files. Listing copy, a thread that ends in a URL, a weekly review.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/mikro-skills">Buy skills</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Master prompts</h2><span class="price">$9+</span></div>
-        <p class="sub">14 system charters · ChatGPT / Claude / Cursor / Grok</p>
-        <p class="blurb">Paste-in jobs, not 500 one-liners. Researcher, writer, reviewer, support, listing, debugger.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/master-prompts">Buy prompts</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Essential UI</h2><span class="price">Free / tip</span></div>
-        <p class="sub">12 WAV · 44.1 kHz · commercial OK</p>
-        <p class="blurb">Twelve short clicks I keep using in prototypes. Pay $0, or leave a dollar.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free sounds</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Soft Glass</h2><span class="price">$1+</span></div>
-        <p class="sub">18 WAV · shimmer + long ring</p>
-        <p class="blurb">Quiet sounds with a little ring. For interfaces that should stay calm.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy Soft Glass</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Crisp Pro</h2><span class="price">$1+</span></div>
-        <p class="sub">18 WAV · dashboard ticks</p>
-        <p class="blurb">Hard, short ticks. Most are gone in under 80 ms. For dashboards.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy Crisp Pro</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Retro Soft</h2><span class="price">$1+</span></div>
-        <p class="sub">16 WAV · warm beeps</p>
-        <p class="blurb">Warm beeps. Handheld feeling, without the piercing square wave.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy Retro Soft</a>
-      </div></article>
-      <article class="card"><div class="body">
-        <div class="row"><h2>Deep Minimal</h2><span class="price">$1+</span></div>
-        <p class="sub">14 WAV · quiet lows</p>
-        <p class="blurb">Low cues you barely notice. Confirmation without a scene.</p>
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy Deep Minimal</a>
-      </div></article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/free-ui-sounds"><img src="thumbs/essential.jpg" alt="Essential" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Essential</h2><span class="price">Free</span></div>
+          <p class="sub">12 button sounds</p>
+          <p class="blurb">Normal clicks for apps and prototypes.</p>
+          <p class="listen">Hear a click</p>
+          <audio controls preload="none" src="samples/click_primary.wav"></audio>
+          <a class="btn free" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get free</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds"><img src="thumbs/glass.jpg" alt="Soft Glass" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Soft Glass</h2><span class="price">$1+</span></div>
+          <p class="sub">18 quiet, glassy clicks</p>
+          <p class="blurb">Softer, with a little ring. For calm apps.</p>
+          <p class="listen">Hear the glassy one</p>
+          <audio controls preload="none" src="samples/glass_tap.wav"></audio>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy Soft Glass</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds"><img src="thumbs/crisp.jpg" alt="Crisp Pro" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Crisp Pro</h2><span class="price">$1+</span></div>
+          <p class="sub">18 short, clicky sounds</p>
+          <p class="blurb">Snappy. For tools and dashboards.</p>
+          <p class="listen">Hear the clicky one</p>
+          <audio controls preload="none" src="samples/crisp_click.wav"></audio>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy Crisp Pro</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds"><img src="thumbs/retro.jpg" alt="Retro Soft" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Retro Soft</h2><span class="price">$1+</span></div>
+          <p class="sub">16 warm, playful beeps</p>
+          <p class="blurb">Old-handheld feeling, without the headache.</p>
+          <p class="listen">Hear the playful one</p>
+          <audio controls preload="none" src="samples/retro_coin.wav"></audio>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy Retro Soft</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds"><img src="thumbs/minimal.jpg" alt="Deep Minimal" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Deep Minimal</h2><span class="price">$1+</span></div>
+          <p class="sub">14 quiet confirms</p>
+          <p class="blurb">A tiny “yes, that worked.” No sparkle.</p>
+          <p class="listen">Hear the quiet one</p>
+          <audio controls preload="none" src="samples/min_confirm.wav"></audio>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy Deep Minimal</a>
+        </div>
+      </article>
     </section>
-    <section class="notes">
-      <p class="eyebrow">notes</p>
-      <ul>
-        <li><a href="free-ui-sounds.html">Free UI sound effects, WAV</a> — twelve clicks I use in prototypes</li>
-        <li><a href="obsidian-second-brain.html">Obsidian second-brain template</a> — a folder, not twelve empty databases</li>
-        <li><a href="svg-line-icons.html">SVG line icons pack</a> — 82 marks, one stroke</li>
-        <li><a href="claude-cursor-skills.html">Claude / Cursor skills pack</a> — twelve SKILL.md files</li>
-        <li><a href="prompts.html">Master prompts for agents</a> — 14 system charters; one free sample</li>
-      </ul>
+
+    <p class="sec">Notes, icons, AI</p>
+    <section class="grid">
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/solo-os-lite"><img src="thumbs/vault-lite.jpg" alt="Solo OS Lite" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Solo OS Lite</h2><span class="price">Free</span></div>
+          <p class="sub">A notes folder</p>
+          <p class="blurb">Projects, a daily page, a Friday review. Open it in any text app.</p>
+          <a class="btn free" href="https://mikroconsult.gumroad.com/l/solo-os-lite">Get free</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/solo-os"><img src="thumbs/vault.jpg" alt="Solo OS" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Solo OS</h2><span class="price">$7+</span></div>
+          <p class="sub">Notes plus a tiny shop</p>
+          <p class="blurb">Same folder, plus what you sell, money in, and people.</p>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/solo-os">Buy Solo OS</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="icons.html"><img src="thumbs/icons.jpg" alt="Line icons" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Line icons</h2><span class="price">$7+</span></div>
+          <p class="sub">82 simple icons for apps</p>
+          <p class="blurb">Buttons, arrows, menus. Same look on all of them. <a href="icons.html" style="color:var(--free);font-weight:600;text-decoration:none">See them all</a>.</p>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/line-icons">Buy icons</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://mikroconsult.gumroad.com/l/mikro-skills"><img src="thumbs/skills.jpg" alt="Skills" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>AI jobs</h2><span class="price">$9+</span></div>
+          <p class="sub">12 jobs for Claude, Cursor, Grok</p>
+          <p class="blurb">Drop a job into your AI: write a listing, answer a buyer, run a Friday review.</p>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/mikro-skills">Buy AI jobs</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="prompts.html"><img src="thumbs/prompts.jpg" alt="Master prompts" width="640" height="640"/></a>
+        <div class="body">
+          <div class="row"><h2>Master prompts</h2><span class="price">$7+</span></div>
+          <p class="sub">14 jobs to paste into ChatGPT</p>
+          <p class="blurb">Copy, paste, the AI becomes that job. <a href="prompts.html" style="color:var(--free);font-weight:600;text-decoration:none">Read the free one</a>.</p>
+          <a class="btn" href="https://mikroconsult.gumroad.com/l/master-prompts">Buy prompts</a>
+        </div>
+      </article>
     </section>
-    <p class="foot">Checkout is Gumroad. Free-pack clicks up top; paid-engine previews in the row below. Full zips after checkout. <a href="icons.html" style="color:var(--teal);font-weight:600;text-decoration:none">Line icons gallery</a> · <a href="demo.html" style="color:var(--teal);font-weight:600;text-decoration:none">Sound samples</a>.</p>
+    <p class="foot">Checkout is on Gumroad. Listen here, then buy if the style fits. <a href="demo.html">All sound samples</a> · <a href="icons.html">Icon gallery</a>.</p>
   </div>
 </body>
 </html>
