@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Figma prototype sound effects (WAV) — button clicks</title>
+<meta name="description" content="Short WAV button clicks for Figma prototypes. Upload as Play sound on a component. Twelve files, $0, commercial use OK."/>
+<link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/figma-ui-sounds.html"/>
+<meta property="og:title" content="Figma prototype sound effects (WAV) — button clicks"/>
+<meta property="og:description" content="Attach a 80 ms click to a Figma button. WAV, 44.1 kHz. Free pack, commercial OK."/>
+<meta property="og:image" content="https://gama-base.github.io/mikroconsult-ui-sounds/cover.png"/>
+<meta property="og:url" content="https://gama-base.github.io/mikroconsult-ui-sounds/figma-ui-sounds.html"/>
+<meta property="og:type" content="article"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Add a button click to a Figma prototype",
+      "description": "Attach a short WAV UI click to a Figma component using the Prototype Play sound action.",
+      "totalTime": "PT3M",
+      "tool": {"@type": "HowToTool", "name": "Figma"},
+      "supply": {"@type": "HowToSupply", "name": "mikroconsult Essential UI WAV pack"},
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Get the WAVs", "text": "Download the free Essential pack. Pay $0. Unzip the twelve 44.1 kHz WAV files."},
+        {"@type": "HowToStep", "position": 2, "name": "Open Prototype", "text": "In Figma, select the button or component. Switch to the Prototype tab."},
+        {"@type": "HowToStep", "position": 3, "name": "Play sound", "text": "Add an On click interaction. Set the action to Play sound and upload click_primary.wav (or hover.wav for hover)."},
+        {"@type": "HowToStep", "position": 4, "name": "Present", "text": "Use Present. The click should fire with the tap. Keep files under ~150 ms so they do not overlap the next screen."}
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Essential — 12 UI clicks (free WAV)",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://mikroconsult.gumroad.com/l/free-ui-sounds"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root { --bg:#E8E2D6; --paper:#FAF7F2; --ink:#1C1917; --muted:#57534E; --line:#D6D3D1; --teal:#0F766E; --teal2:#115E59; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+  .wrap { max-width:720px; margin:0 auto; padding:28px 18px 72px; }
+  .crumb { font-size:13px; margin:0 0 16px; color:var(--muted); }
+  .crumb a { color:var(--teal2); text-decoration:none; }
+  .crumb a:hover { text-decoration:underline; }
+  article { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:28px 26px 32px; }
+  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700; }
+  h1 { margin:0 0 12px; font-size:clamp(1.5rem,3.6vw,2.05rem); line-height:1.18; }
+  h2 { margin:22px 0 8px; font-size:1.05rem; }
+  p { margin:0 0 12px; color:#44403C; }
+  .lead { color:var(--muted); }
+  ol, ul { margin:0 0 14px; padding-left:1.15rem; color:#44403C; }
+  li { margin:4px 0; }
+  code { font-size:.9em; background:#fff; border:1px solid var(--line); border-radius:6px; padding:1px 5px; }
+  .samples { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 6px; }
+  .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+  .samples figcaption { font-size:12px; color:var(--muted); margin-bottom:6px; }
+  audio { width:100%; max-width:280px; height:44px; display:block; position:relative; z-index:2; }
+  .playbtn { border:0; background:#1F6F5B; color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:10px 14px; cursor:pointer; width:100%; max-width:280px; position:relative; z-index:2; }
+  .cta { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 16px; }
+  .btn:hover { background:var(--teal2); }
+  .more { margin:14px 0 0; font-size:14px; color:var(--muted); }
+  .more a { color:var(--teal2); }
+  .foot { margin-top:18px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="crumb"><a href="./">mikroconsult</a> · notes</p>
+    <article>
+      <p class="eyebrow">figma</p>
+      <h1>Figma prototype sound effects, as WAV</h1>
+      <p class="lead">A silent Figma file looks finished and feels dead. These twelve clicks are short enough to hang on a component without covering the next screen.</p>
+      <p>They are original sine tones, not recuts. Figma’s Prototype <strong>Play sound</strong> action accepts WAV. Pay $0 for the zip.</p>
+
+      <h2>Hear three of them</h2>
+      <div class="samples">
+        <figure>
+          <figcaption>click_primary · On click</figcaption>
+          <audio controls preload="auto" playsinline src="samples/click_primary.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
+        </figure>
+        <figure>
+          <figcaption>success · after submit</figcaption>
+          <audio controls preload="auto" playsinline src="samples/success.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
+        </figure>
+        <figure>
+          <figcaption>toggle_on · switch</figcaption>
+          <audio controls preload="auto" playsinline src="samples/toggle_on.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
+        </figure>
+      </div>
+
+      <h2>Drop a click on a Figma button</h2>
+      <ol>
+        <li>Download the free pack. Unzip. You want <code>click_primary.wav</code> (85 ms) and maybe <code>hover.wav</code> (65 ms).</li>
+        <li>Select the button. Open the <strong>Prototype</strong> tab.</li>
+        <li>Add an interaction: <strong>On click → Play sound</strong>. Upload the WAV. Figma also takes MP3 and M4A if a teammate prefers those.</li>
+        <li>Present the frame. The sound plays with the tap. Keep the file short so it does not bleed into the destination screen.</li>
+      </ol>
+      <p>Play sound is a prototype action. If your plan does not show it, the same WAV still works in code: <code>new Audio('/sounds/click_primary.wav').play()</code>.</p>
+
+      <h2>Which file on which control</h2>
+      <ul>
+        <li>Primary button → <code>click_primary.wav</code></li>
+        <li>Secondary / ghost → <code>click_secondary.wav</code> or <code>tap_soft.wav</code></li>
+        <li>Hover (if you prototype pointer) → <code>hover.wav</code></li>
+        <li>Toggle → <code>toggle_on.wav</code> / <code>toggle_off.wav</code></li>
+        <li>Form ok / fail → <code>success.wav</code> / <code>error.wav</code></li>
+        <li>Sheet open / close → <code>whoosh_open.wav</code> / <code>whoosh_close.wav</code></li>
+      </ul>
+      <p>Format: WAV · 44.1 kHz · mono · 16-bit. Most under 150 ms. Personal and commercial product use is fine. Don’t resell the zip as another sound pack.</p>
+
+      <div class="cta">
+        <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free Figma sounds</a>
+        <p class="more">Need a different engine in the same prototype: <a href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Soft Glass</a> ($1+), <a href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Crisp Pro</a> ($1+). Longer write-up of the free zip: <a href="free-ui-sounds.html">free UI sound effects (WAV)</a>.</p>
+      </div>
+    </article>
+    <p class="foot"><a href="./" style="color:inherit">All products</a> · <a href="free-ui-sounds.html" style="color:inherit">Free WAV pack</a> · <a href="demo.html" style="color:inherit">Listen</a> · <a href="svg-line-icons.html" style="color:inherit">Line icons</a></p>
+  </div>
+<script>
+document.addEventListener("click", function (e) {
+  var b = e.target.closest(".playbtn");
+  if (!b) return;
+  e.preventDefault();
+  var a = b.parentNode.querySelector("audio");
+  if (!a) return;
+  a.currentTime = 0;
+  var p = a.play();
+  if (p && p.then) {
+    p.then(function () { b.textContent = "Play again"; })
+     .catch(function () { b.textContent = "Could not play — use the bar above"; });
+  }
+});
+</script>
+</body>
+</html>
