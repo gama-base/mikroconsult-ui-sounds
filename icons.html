@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>mikroconsult — line icons</title>
+<meta name="description" content="70 original 24px line icons. One stroke. SVG + PNG in the $9 pack."/>
+<link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/icons.html"/>
+<style>
+  :root { --bg:#E8E2D6; --paper:#FAF7F2; --ink:#1C1917; --muted:#57534E; --line:#D6D3D1; --teal:#0F766E; --teal2:#115E59; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+  .wrap { max-width:980px; margin:0 auto; padding:36px 18px 72px; }
+  .hero { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:32px 26px; margin-bottom:22px; }
+  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700; }
+  h1 { margin:0 0 10px; font-size:clamp(1.7rem,4vw,2.35rem); line-height:1.15; }
+  .lead { margin:0 0 16px; color:var(--muted); max-width:42rem; }
+  .nav { margin:0 0 14px; font-size:13px; }
+  .nav a { color:var(--teal); text-decoration:none; font-weight:600; }
+  .nav a:hover { text-decoration:underline; }
+  .nav span { color:var(--line); margin:0 8px; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:4px; }
+  .search { flex:1; min-width:200px; max-width:28rem; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); font-size:14px; }
+  .search:focus { outline:2px solid var(--teal); outline-offset:1px; }
+  .picked { font-size:13px; color:var(--teal); font-weight:700; min-height:1.4em; }
+  .empty { color:var(--muted); font-size:14px; margin:8px 0 0; }
+  .count { font-size:13px; color:var(--muted); }
+  .cta { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:16px; }
+  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; }
+  .btn:hover { background:var(--teal2); }
+  .note { font-size:13px; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(92px,1fr)); gap:10px; }
+  .tile { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 8px 10px; cursor:pointer; text-align:center; }
+  .tile:hover, .tile:focus { border-color:var(--teal); }
+  .tile.selected { border-color:var(--teal); background:var(--paper); }
+  .tile img { width:32px; height:32px; display:block; margin:0 auto 8px; }
+  .tile .name { font-size:11px; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .foot { margin-top:22px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="nav"><a href="./">Store</a><span>·</span><a href="icons.html">Line icons</a><span>·</span><a href="demo.html">Sound samples</a></p>
+      <p class="eyebrow">mikroconsult · 70 marks</p>
+      <h1>Line icons</h1>
+      <p class="lead">Seventy marks on a 24px grid, one 1.75px stroke, round caps. Click a tile to see its filename. These are the same SVGs in the zip, plus 1× and 2× PNG. Drawn here, not recut from Lucide.</p>
+      <div class="toolbar">
+        <input class="search" id="q" type="search" placeholder="Search by name — cart, lock, inbox…" autocomplete="off"/>
+        <span class="count" id="count"></span>
+      </div>
+      <p class="picked" id="picked" aria-live="polite"></p>
+      <div class="cta">
+        <a class="btn" href="https://mikroconsult.gumroad.com/l/line-icons">Buy the pack — $9+</a>
+        <span class="note">SVG + PNG. Commercial use OK.</span>
+      </div>
+    </header>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing matches that name.</p>
+    <p class="foot"><a href="./" style="color:var(--teal);font-weight:600;text-decoration:none">Back to the store</a> · Checkout is Gumroad.</p>
+  </div>
+  <script>
+    const NAMES = ["bell","bookmark","box","calendar","camera","cart","chart","chat","check","clock","close","code","cpu","credit-card","database","download","edit","eye","eye-off","file","film","filter","flag","folder","gift","globe","grid","hash","headphones","heart","home","image","inbox","info","lightning","link","lock","mail","map-pin","menu","mic","minus","more","pause","play","plus","receipt","repeat","rocket","search","send","settings","share","sliders","spark","star","success","tag","target","terminal","trash","trophy","unlock","upload","user","users","volume","wallet","warning","zap-off"];
+    const grid = document.getElementById("grid");
+    const q = document.getElementById("q");
+    const count = document.getElementById("count");
+    const picked = document.getElementById("picked");
+    const empty = document.getElementById("empty");
+    const tiles = {};
+
+    NAMES.forEach(function (name) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "tile";
+      btn.dataset.name = name;
+      btn.setAttribute("aria-label", name);
+      const img = document.createElement("img");
+      img.src = "icons/" + name + ".svg";
+      img.alt = "";
+      img.width = 32;
+      img.height = 32;
+      const label = document.createElement("div");
+      label.className = "name";
+      label.textContent = name;
+      btn.appendChild(img);
+      btn.appendChild(label);
+      btn.addEventListener("click", function () {
+        document.querySelectorAll(".tile.selected").forEach(function (el) { el.classList.remove("selected"); });
+        btn.classList.add("selected");
+        picked.textContent = name + ".svg";
+      });
+      grid.appendChild(btn);
+      tiles[name] = btn;
+    });
+
+    function filter() {
+      const term = q.value.trim().toLowerCase();
+      let n = 0;
+      NAMES.forEach(function (name) {
+        const show = !term || name.indexOf(term) !== -1;
+        tiles[name].hidden = !show;
+        if (show) n += 1;
+      });
+      count.textContent = n + " of " + NAMES.length;
+      empty.hidden = n !== 0;
+    }
+
+    q.addEventListener("input", filter);
+    filter();
+  </script>
+</body>
+</html>

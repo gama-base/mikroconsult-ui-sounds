@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>mikroconsult — UI sound samples</title>
+<meta name="description" content="Four preview clicks from the free Essential UI pack. Full zip is 12 WAV."/>
+<link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/demo.html"/>
+<style>
+  :root { --bg:#E8E2D6; --paper:#FAF7F2; --ink:#1C1917; --muted:#57534E; --line:#D6D3D1; --teal:#0F766E; --teal2:#115E59; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+  .wrap { max-width:640px; margin:0 auto; padding:36px 18px 72px; }
+  .hero { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:32px 26px; margin-bottom:22px; }
+  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700; }
+  h1 { margin:0 0 10px; font-size:clamp(1.5rem,4vw,2rem); line-height:1.15; }
+  .lead { margin:0 0 16px; color:var(--muted); }
+  .nav { margin:0 0 14px; font-size:13px; }
+  .nav a { color:var(--teal); text-decoration:none; font-weight:600; }
+  .nav a:hover { text-decoration:underline; }
+  .nav span { color:var(--line); margin:0 8px; }
+  .samples { display:flex; flex-direction:column; gap:10px; }
+  .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .samples figcaption { font-size:14px; color:var(--ink); font-weight:600; }
+  audio { width:180px; height:32px; }
+  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; margin-top:16px; }
+  .btn:hover { background:var(--teal2); }
+  .foot { margin-top:22px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="nav"><a href="./">Store</a><span>·</span><a href="icons.html">Line icons</a><span>·</span><a href="demo.html">Sound samples</a></p>
+      <p class="eyebrow">mikroconsult · four WAVs</p>
+      <h1>Free UI clicks</h1>
+      <p class="lead">Four files from the Essential pack. The zip has twelve, 44.1 kHz, commercial use OK. Pay $0, or leave a dollar.</p>
+      <div class="samples">
+        <figure><figcaption>click_primary</figcaption><audio controls preload="none" src="samples/click_primary.wav"></audio></figure>
+        <figure><figcaption>success</figcaption><audio controls preload="none" src="samples/success.wav"></audio></figure>
+        <figure><figcaption>toggle_on</figcaption><audio controls preload="none" src="samples/toggle_on.wav"></audio></figure>
+        <figure><figcaption>notify</figcaption><audio controls preload="none" src="samples/notify.wav"></audio></figure>
+      </div>
+      <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free pack</a>
+    </header>
+    <p class="foot">More packs (Soft Glass, Crisp, Retro, Minimal) are $1+ on the <a href="./" style="color:var(--teal);font-weight:600;text-decoration:none">store page</a>.</p>
+  </div>
+</body>
+</html>
