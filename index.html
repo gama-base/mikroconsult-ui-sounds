@@ -26,6 +26,10 @@
   .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
   .samples figcaption { font-size:12px; color:var(--muted); margin-bottom:6px; }
   audio { width:160px; height:32px; }
+  .buy { display:inline-block; margin-top:6px; color:var(--teal); font-weight:700; font-size:12px; text-decoration:none; }
+  .buy:hover { text-decoration:underline; }
+  .paid-row { margin-top:16px; }
+  .paid-row .eyebrow { margin-bottom:8px; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; }
   .card { background:var(--paper); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; }
   .body { padding:16px 16px 18px; display:flex; flex-direction:column; gap:6px; flex:1; }
@@ -67,6 +71,31 @@
         <figure><figcaption>success</figcaption><audio controls preload="none" src="samples/success.wav"></audio></figure>
         <figure><figcaption>toggle</figcaption><audio controls preload="none" src="samples/toggle_on.wav"></audio></figure>
         <figure><figcaption>notify</figcaption><audio controls preload="none" src="samples/notify.wav"></audio></figure>
+      </div>
+      <div class="paid-row">
+        <p class="eyebrow">hear the paid engines</p>
+        <div class="samples">
+          <figure>
+            <figcaption>glass_tap</figcaption>
+            <audio controls preload="none" src="samples/glass_tap.wav"></audio>
+            <a class="buy" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy</a>
+          </figure>
+          <figure>
+            <figcaption>crisp_click</figcaption>
+            <audio controls preload="none" src="samples/crisp_click.wav"></audio>
+            <a class="buy" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy</a>
+          </figure>
+          <figure>
+            <figcaption>retro_coin</figcaption>
+            <audio controls preload="none" src="samples/retro_coin.wav"></audio>
+            <a class="buy" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy</a>
+          </figure>
+          <figure>
+            <figcaption>min_confirm</figcaption>
+            <audio controls preload="none" src="samples/min_confirm.wav"></audio>
+            <a class="buy" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy</a>
+          </figure>
+        </div>
       </div>
     </header>
     <section class="grid">
@@ -134,7 +163,7 @@
         <li><a href="claude-cursor-skills.html">Claude / Cursor skills pack</a> — twelve SKILL.md files</li>
       </ul>
     </section>
-    <p class="foot">Checkout is Gumroad. The audio here is four free-pack previews. The rest is in the zips. <a href="icons.html" style="color:var(--teal);font-weight:600;text-decoration:none">Line icons gallery</a> · <a href="demo.html" style="color:var(--teal);font-weight:600;text-decoration:none">Sound samples</a>.</p>
+    <p class="foot">Checkout is Gumroad. Free-pack clicks up top; paid-engine previews in the row below. Full zips after checkout. <a href="icons.html" style="color:var(--teal);font-weight:600;text-decoration:none">Line icons gallery</a> · <a href="demo.html" style="color:var(--teal);font-weight:600;text-decoration:none">Sound samples</a>.</p>
   </div>
 </body>
 </html>

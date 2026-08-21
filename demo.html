@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>mikroconsult — UI sound samples</title>
-<meta name="description" content="Four preview clicks from the free Essential UI pack. Full zip is 12 WAV."/>
+<meta name="description" content="Preview clicks from Essential plus one file from each paid UI engine. Full zips on Gumroad."/>
 <link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/demo.html"/>
 <style>
   :root { --bg:#E8E2D6; --paper:#FAF7F2; --ink:#1C1917; --muted:#57534E; --line:#D6D3D1; --teal:#0F766E; --teal2:#115E59; }
@@ -23,6 +23,8 @@
   .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
   .samples figcaption { font-size:14px; color:var(--ink); font-weight:600; }
   audio { width:180px; height:32px; }
+  .buy { color:var(--teal); font-weight:700; font-size:13px; text-decoration:none; white-space:nowrap; }
+  .buy:hover { text-decoration:underline; }
   .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; margin-top:16px; }
   .btn:hover { background:var(--teal2); }
   .foot { margin-top:22px; color:var(--muted); font-size:13px; }
@@ -43,7 +45,34 @@
       </div>
       <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free pack</a>
     </header>
-    <p class="foot">More packs (Soft Glass, Crisp, Retro, Minimal) are $1+ on the <a href="./" style="color:var(--teal);font-weight:600;text-decoration:none">store page</a>.</p>
+    <section class="hero">
+      <p class="eyebrow">mikroconsult · paid engines</p>
+      <h1>Hear the paid packs</h1>
+      <p class="lead">One file from each $1+ engine. Same recipes as the zips. Buy the pack next to the player.</p>
+      <div class="samples">
+        <figure>
+          <figcaption>glass_tap · Soft Glass</figcaption>
+          <audio controls preload="none" src="samples/glass_tap.wav"></audio>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy</a>
+        </figure>
+        <figure>
+          <figcaption>crisp_click · Crisp Pro</figcaption>
+          <audio controls preload="none" src="samples/crisp_click.wav"></audio>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy</a>
+        </figure>
+        <figure>
+          <figcaption>retro_coin · Retro Soft</figcaption>
+          <audio controls preload="none" src="samples/retro_coin.wav"></audio>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy</a>
+        </figure>
+        <figure>
+          <figcaption>min_confirm · Deep Minimal</figcaption>
+          <audio controls preload="none" src="samples/min_confirm.wav"></audio>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy</a>
+        </figure>
+      </div>
+    </section>
+    <p class="foot">Full zips (18 / 18 / 16 / 14 WAV) after checkout. More on the <a href="./" style="color:var(--teal);font-weight:600;text-decoration:none">store page</a>.</p>
   </div>
 </body>
 </html>
