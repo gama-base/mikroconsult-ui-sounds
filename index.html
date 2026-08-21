@@ -3,166 +3,179 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>mikroconsult — small tools</title>
-<meta name="description" content="Button sounds, a notes folder for your shop, simple icons, and prompts for your AI. Listen before you buy."/>
+<title>mikroconsult — hear it, then buy it</title>
+<meta name="description" content="Button sounds you can play before you buy. Plus a notes folder, icons, and prompts for your AI."/>
 <link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/"/>
 <style>
-  :root { --bg:#F6F0E6; --paper:#FFFbf6; --ink:#221C16; --muted:#6F655A; --line:#E6D9C8; --accent:#C24E2C; --accent2:#9A3412; --free:#1F6F5B; }
+  :root {
+    --ink:#161210;
+    --cream:#F3E6D4;
+    --paper:#FFF6EB;
+    --rust:#E24B1A;
+    --rust2:#B83A12;
+    --moss:#1C7A62;
+    --mute:#8A7B6B;
+  }
   * { box-sizing:border-box; }
-  body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
-  .wrap { max-width:980px; margin:0 auto; padding:36px 18px 72px; }
-  .hero { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:32px 26px; margin-bottom:22px; box-shadow:0 8px 28px rgba(34,28,22,.06); }
-  .nav { margin:0 0 14px; font-size:13px; }
-  .nav a { color:var(--free); text-decoration:none; font-weight:600; }
-  .nav span { color:var(--line); margin:0 8px; }
-  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--free); font-weight:700; }
-  h1 { margin:0 0 10px; font-size:clamp(1.7rem,4vw,2.4rem); line-height:1.15; }
-  .lead { margin:0; color:var(--muted); max-width:38rem; }
-  .sec { margin:6px 0 12px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; margin-bottom:28px; }
-  .card { background:var(--paper); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 4px 16px rgba(34,28,22,.05); }
-  .thumb { display:block; }
-  .thumb img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
-  .body { padding:14px 14px 16px; display:flex; flex-direction:column; gap:6px; flex:1; }
-  .row { display:flex; justify-content:space-between; gap:8px; align-items:baseline; }
-  h2 { margin:0; font-size:1.12rem; }
-  .price { color:var(--accent); font-weight:800; }
-  .sub { margin:0; color:var(--muted); font-size:13px; }
-  .blurb { margin:2px 0 8px; color:#3F3A34; font-size:14px; flex:1; }
-  .listen { margin:4px 0 0; font-size:12px; font-weight:700; color:var(--free); }
-  audio { width:100%; height:40px; margin:4px 0 8px; }
-  .playbtn { border:0; background:var(--free); color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:10px 14px; cursor:pointer; margin:4px 0 8px; width:100%; }
-  .playbtn:hover { background:#165A49; }
-  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 14px; }
-  .btn.free { background:var(--free); }
-  .btn:hover { background:var(--accent2); }
-  .btn.free:hover { background:#165A49; }
-  .foot { color:var(--muted); font-size:13px; }
-  .foot a { color:var(--free); font-weight:600; text-decoration:none; }
+  body { margin:0; font-family:Georgia, "Times New Roman", serif; background:var(--ink); color:var(--cream); line-height:1.45; }
+  a { color:inherit; }
+  .top {
+    padding:28px 22px 40px;
+    background:
+      radial-gradient(900px 400px at 10% -10%, #3a2418 0%, transparent 55%),
+      var(--ink);
+  }
+  .wrap { max-width:1080px; margin:0 auto; }
+  .brand { font-family:ui-sans-serif,system-ui,sans-serif; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:#E7C4A8; margin:0 0 18px; }
+  .nav { font-family:ui-sans-serif,system-ui,sans-serif; font-size:13px; margin:0 0 28px; display:flex; gap:16px; flex-wrap:wrap; }
+  .nav a { color:#E7C4A8; text-decoration:none; border-bottom:1px solid #5a4030; }
+  h1 { font-weight:400; font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.05; margin:0 0 12px; max-width:16ch; }
+  .lead { font-family:ui-sans-serif,system-ui,sans-serif; color:#C9B6A4; max-width:38rem; margin:0 0 28px; font-size:16px; }
+  .listen-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+    gap:12px;
+  }
+  .tile {
+    background:#221A16;
+    border:1px solid #3A2C24;
+    border-radius:8px;
+    padding:16px 14px 14px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-height:210px;
+  }
+  .tile h2 { font-family:ui-sans-serif,system-ui,sans-serif; font-size:15px; margin:0; font-weight:700; }
+  .tile p { font-family:ui-sans-serif,system-ui,sans-serif; font-size:13px; color:#C9B6A4; margin:0; flex:1; }
+  .tile .price { font-family:ui-sans-serif,system-ui,sans-serif; font-size:12px; color:#E7C4A8; }
+  .playbtn {
+    font-family:ui-sans-serif,system-ui,sans-serif;
+    border:0; cursor:pointer;
+    background:var(--rust); color:#fff;
+    font-weight:800; font-size:15px;
+    border-radius:6px; padding:12px 10px; width:100%;
+  }
+  .playbtn:hover { background:var(--rust2); }
+  .tile a.buy {
+    font-family:ui-sans-serif,system-ui,sans-serif;
+    display:block; text-align:center; text-decoration:none;
+    font-size:13px; font-weight:700; color:#E7C4A8; padding-top:4px;
+  }
+  .rest {
+    background:var(--cream);
+    color:#221C16;
+    padding:40px 22px 72px;
+  }
+  .rest h3 {
+    font-family:ui-sans-serif,system-ui,sans-serif;
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:#8A7B6B; margin:0 0 16px;
+  }
+  .rows { display:flex; flex-direction:column; gap:10px; }
+  .row {
+    display:grid;
+    grid-template-columns:96px 1fr auto;
+    gap:16px; align-items:center;
+    background:var(--paper);
+    border:1px solid #E2D2BC;
+    border-radius:10px;
+    padding:10px 14px 10px 10px;
+    text-decoration:none; color:inherit;
+  }
+  .row img { width:96px; height:96px; object-fit:cover; border-radius:8px; display:block; }
+  .row strong { display:block; font-family:ui-sans-serif,system-ui,sans-serif; font-size:16px; }
+  .row span { font-family:ui-sans-serif,system-ui,sans-serif; font-size:13px; color:#6F655A; }
+  .row em { font-style:normal; font-family:ui-sans-serif,system-ui,sans-serif; font-weight:800; color:var(--rust); }
+  @media (max-width:640px) {
+    .row { grid-template-columns:72px 1fr; }
+    .row em { grid-column:2; }
+    .row img { width:72px; height:72px; }
+  }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="hero">
-      <p class="nav"><a href="./">Store</a><span>·</span><a href="icons.html">Icons</a><span>·</span><a href="demo.html">Listen</a><span>·</span><a href="prompts.html">Prompts</a></p>
-      <p class="eyebrow">mikroconsult</p>
-      <h1>Small tools. Press play before you buy.</h1>
-      <p class="lead">Sounds for buttons, a notes folder for your shop, simple icons, and jobs for your AI. The free ones are $0. The rest is a few dollars.</p>
-    </header>
-
-    <p class="sec">Sounds — hear the style</p>
-    <section class="grid">
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/free-ui-sounds"><img src="thumbs/essential.jpg" alt="Essential" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Essential</h2><span class="price">Free</span></div>
-          <p class="sub">12 button sounds</p>
-          <p class="blurb">Normal clicks for apps and prototypes.</p>
-          <p class="listen">Hear a click</p>
+  <div class="top">
+    <div class="wrap">
+      <p class="brand">mikroconsult</p>
+      <p class="nav">
+        <a href="./">Store</a>
+        <a href="demo.html">Listen</a>
+        <a href="icons.html">Icons</a>
+        <a href="prompts.html">Prompts</a>
+      </p>
+      <h1>Play the click. If you like it, buy the pack.</h1>
+      <p class="lead">Five styles of button sounds. One tap. No WAV jargon. The rest of the shop is below: a notes folder, simple icons, and jobs for your AI.</p>
+      <div class="listen-grid">
+        <div class="tile">
+          <h2>Essential</h2>
+          <p>A normal click. Free.</p>
+          <span class="price">$0</span>
           <button type="button" class="playbtn" data-play="samples/click_primary.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/click_primary.mp3" type="audio/mpeg"><source src="samples/click_primary.wav" type="audio/wav"></audio>
-          <a class="btn free" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get free</a>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get it</a>
         </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds"><img src="thumbs/glass.jpg" alt="Soft Glass" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Soft Glass</h2><span class="price">$1+</span></div>
-          <p class="sub">18 quiet, glassy clicks</p>
-          <p class="blurb">Softer, with a little ring. For calm apps.</p>
-          <p class="listen">Hear the glassy one</p>
+        <div class="tile">
+          <h2>Soft Glass</h2>
+          <p>Soft, a little ring.</p>
+          <span class="price">$1+</span>
           <button type="button" class="playbtn" data-play="samples/glass_tap.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/glass_tap.mp3" type="audio/mpeg"><source src="samples/glass_tap.wav" type="audio/wav"></audio>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy Soft Glass</a>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/glass-ui-sounds">Buy</a>
         </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds"><img src="thumbs/crisp.jpg" alt="Crisp Pro" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Crisp Pro</h2><span class="price">$1+</span></div>
-          <p class="sub">18 short, clicky sounds</p>
-          <p class="blurb">Snappy. For tools and dashboards.</p>
-          <p class="listen">Hear the clicky one</p>
+        <div class="tile">
+          <h2>Crisp Pro</h2>
+          <p>Short and snappy.</p>
+          <span class="price">$1+</span>
           <button type="button" class="playbtn" data-play="samples/crisp_click.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/crisp_click.mp3" type="audio/mpeg"><source src="samples/crisp_click.wav" type="audio/wav"></audio>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy Crisp Pro</a>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Buy</a>
         </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds"><img src="thumbs/retro.jpg" alt="Retro Soft" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Retro Soft</h2><span class="price">$1+</span></div>
-          <p class="sub">16 warm, playful beeps</p>
-          <p class="blurb">Old-handheld feeling, without the headache.</p>
-          <p class="listen">Hear the playful one</p>
+        <div class="tile">
+          <h2>Retro Soft</h2>
+          <p>Warm, playful beep.</p>
+          <span class="price">$1+</span>
           <button type="button" class="playbtn" data-play="samples/retro_coin.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/retro_coin.mp3" type="audio/mpeg"><source src="samples/retro_coin.wav" type="audio/wav"></audio>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy Retro Soft</a>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Buy</a>
         </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds"><img src="thumbs/minimal.jpg" alt="Deep Minimal" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Deep Minimal</h2><span class="price">$1+</span></div>
-          <p class="sub">14 quiet confirms</p>
-          <p class="blurb">A tiny “yes, that worked.” No sparkle.</p>
-          <p class="listen">Hear the quiet one</p>
+        <div class="tile">
+          <h2>Deep Minimal</h2>
+          <p>A quiet “yes.”</p>
+          <span class="price">$1+</span>
           <button type="button" class="playbtn" data-play="samples/min_confirm.mp3">Play</button>
-          <audio controls preload="metadata"><source src="samples/min_confirm.mp3" type="audio/mpeg"><source src="samples/min_confirm.wav" type="audio/wav"></audio>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy Deep Minimal</a>
+          <a class="buy" href="https://mikroconsult.gumroad.com/l/minimal-ui-sounds">Buy</a>
         </div>
-      </article>
-    </section>
-
-    <p class="sec">Notes, icons, AI</p>
-    <section class="grid">
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/solo-os-lite"><img src="thumbs/vault-lite.jpg" alt="Solo OS Lite" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Solo OS Lite</h2><span class="price">Free</span></div>
-          <p class="sub">A notes folder</p>
-          <p class="blurb">Projects, a daily page, a Friday review. Open it in any text app.</p>
-          <a class="btn free" href="https://mikroconsult.gumroad.com/l/solo-os-lite">Get free</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/solo-os"><img src="thumbs/vault.jpg" alt="Solo OS" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Solo OS</h2><span class="price">$7+</span></div>
-          <p class="sub">Notes plus a tiny shop</p>
-          <p class="blurb">Same folder, plus what you sell, money in, and people.</p>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/solo-os">Buy Solo OS</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="icons.html"><img src="thumbs/icons.jpg" alt="Line icons" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Line icons</h2><span class="price">$7+</span></div>
-          <p class="sub">82 simple icons for apps</p>
-          <p class="blurb">Buttons, arrows, menus. Same look on all of them. <a href="icons.html" style="color:var(--free);font-weight:600;text-decoration:none">See them all</a>.</p>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/line-icons">Buy icons</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="https://mikroconsult.gumroad.com/l/mikro-skills"><img src="thumbs/skills.jpg" alt="Skills" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>AI jobs</h2><span class="price">$9+</span></div>
-          <p class="sub">12 jobs for Claude, Cursor, Grok</p>
-          <p class="blurb">Drop a job into your AI: write a listing, answer a buyer, run a Friday review.</p>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/mikro-skills">Buy AI jobs</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="thumb" href="prompts.html"><img src="thumbs/prompts.jpg" alt="Master prompts" width="640" height="640"/></a>
-        <div class="body">
-          <div class="row"><h2>Master prompts</h2><span class="price">$7+</span></div>
-          <p class="sub">14 jobs to paste into ChatGPT</p>
-          <p class="blurb">Copy, paste, the AI becomes that job. <a href="prompts.html" style="color:var(--free);font-weight:600;text-decoration:none">Read the free one</a>.</p>
-          <a class="btn" href="https://mikroconsult.gumroad.com/l/master-prompts">Buy prompts</a>
-        </div>
-      </article>
-    </section>
-    <p class="foot">Checkout is on Gumroad. Listen here, then buy if the style fits. <a href="demo.html">All sound samples</a> · <a href="icons.html">Icon gallery</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="rest">
+    <div class="wrap">
+      <h3>The rest of the shop</h3>
+      <div class="rows">
+        <a class="row" href="https://mikroconsult.gumroad.com/l/solo-os-lite">
+          <img src="thumbs/vault-lite.jpg" alt="" width="96" height="96"/>
+          <div><strong>Notes folder</strong><span>Free. Daily page and a Friday review.</span></div>
+          <em>Free</em>
+        </a>
+        <a class="row" href="https://mikroconsult.gumroad.com/l/solo-os">
+          <img src="thumbs/vault.jpg" alt="" width="96" height="96"/>
+          <div><strong>Notes + shop</strong><span>Same folder, plus what you sell and who you know.</span></div>
+          <em>$7+</em>
+        </a>
+        <a class="row" href="icons.html">
+          <img src="thumbs/icons.jpg" alt="" width="96" height="96"/>
+          <div><strong>82 simple icons</strong><span>For buttons and menus. See them all first.</span></div>
+          <em>$7+</em>
+        </a>
+        <a class="row" href="https://mikroconsult.gumroad.com/l/mikro-skills">
+          <img src="thumbs/skills.jpg" alt="" width="96" height="96"/>
+          <div><strong>12 jobs for your AI</strong><span>Drop into Claude, Cursor, or Grok.</span></div>
+          <em>$9+</em>
+        </a>
+        <a class="row" href="prompts.html">
+          <img src="thumbs/prompts.jpg" alt="" width="96" height="96"/>
+          <div><strong>14 prompts to paste</strong><span>ChatGPT or Claude becomes that job.</span></div>
+          <em>$7+</em>
+        </a>
+      </div>
+    </div>
   </div>
   <script src="play.js"></script>
 </body>
