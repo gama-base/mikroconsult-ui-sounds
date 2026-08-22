@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Godot UI sound effects (WAV) — button clicks</title>
-<meta name="description" content="Short WAV button clicks for Godot. Drop on an AudioStreamPlayer, play() on button press. Twelve files, $0, commercial use OK."/>
-<link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/godot-ui-sounds.html"/>
-<meta property="og:title" content="Godot UI sound effects (WAV) — button clicks"/>
-<meta property="og:description" content="Attach a short WAV click to a Godot Button. 44.1 kHz. Free pack, commercial OK."/>
+<title>Unity UI sound effects (WAV) — button clicks</title>
+<meta name="description" content="Short WAV button clicks for Unity. PlayOneShot on a Button. Twelve files, $0, commercial use OK."/>
+<link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/unity-ui-sounds.html"/>
+<meta property="og:title" content="Unity UI sound effects (WAV) — button clicks"/>
+<meta property="og:description" content="Attach a short WAV click to a Unity Button. 44.1 kHz. Free pack, commercial OK."/>
 <meta property="og:image" content="https://gama-base.github.io/mikroconsult-ui-sounds/cover.png"/>
-<meta property="og:url" content="https://gama-base.github.io/mikroconsult-ui-sounds/godot-ui-sounds.html"/>
+<meta property="og:url" content="https://gama-base.github.io/mikroconsult-ui-sounds/unity-ui-sounds.html"/>
 <meta property="og:type" content="article"/>
 <script type="application/ld+json">
 {
@@ -17,15 +17,15 @@
   "@graph": [
     {
       "@type": "HowTo",
-      "name": "Add a button click in Godot",
-      "description": "Play a short WAV UI click from a Godot Button using AudioStreamPlayer.",
+      "name": "Add a button click in Unity",
+      "description": "Play a short WAV UI click from a Unity Button using AudioSource.PlayOneShot.",
       "totalTime": "PT3M",
-      "tool": {"@type": "HowToTool", "name": "Godot"},
+      "tool": {"@type": "HowToTool", "name": "Unity"},
       "supply": {"@type": "HowToSupply", "name": "mikroconsult Essential UI WAV pack"},
       "step": [
-        {"@type": "HowToStep", "position": 1, "name": "Get the WAVs", "text": "Download the free Essential pack. Pay $0. Unzip. Import click_primary.wav into res://."},
-        {"@type": "HowToStep", "position": 2, "name": "Add a player", "text": "Add an AudioStreamPlayer (or AudioStreamPlayer2D). Set Stream to click_primary.wav."},
-        {"@type": "HowToStep", "position": 3, "name": "Hook the button", "text": "On the Button pressed signal, call player.play()."},
+        {"@type": "HowToStep", "position": 1, "name": "Get the WAVs", "text": "Download the free Essential pack. Pay $0. Unzip. Drop click_primary.wav into Assets/Audio."},
+        {"@type": "HowToStep", "position": 2, "name": "Add a source", "text": "Add an AudioSource on the Canvas or the Button. Uncheck Play On Awake. Assign click_primary as the clip."},
+        {"@type": "HowToStep", "position": 3, "name": "Hook the button", "text": "On Button onClick, call audio.PlayOneShot(click). Do not use Play() if the player can mash — shots will cut each other."},
         {"@type": "HowToStep", "position": 4, "name": "Keep it short", "text": "These files are under 150 ms so they do not stack if the player mashes the button."}
       ]
     },
@@ -55,6 +55,7 @@
   ol, ul { margin:0 0 14px; padding-left:1.15rem; color:#44403C; }
   li { margin:4px 0; }
   code { font-size:.9em; background:#fff; border:1px solid var(--line); border-radius:6px; padding:1px 5px; }
+  pre { overflow:auto; background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:13px; line-height:1.45; }
   .samples { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 6px; }
   .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
   .samples figcaption { font-size:12px; color:var(--muted); margin-bottom:6px; }
@@ -72,10 +73,10 @@
   <div class="wrap">
     <p class="crumb"><a href="./">mikroconsult</a> · notes</p>
     <article>
-      <p class="eyebrow">godot</p>
-      <h1>Godot UI sound effects, as WAV</h1>
-      <p class="lead">Menus feel cheap when they are silent. These twelve clicks are short enough to fire on a Button without stacking.</p>
-      <p>Original sine tones, 44.1 kHz WAV. Godot imports WAV natively. Pay $0 for the zip.</p>
+      <p class="eyebrow">unity</p>
+      <h1>Unity UI sound effects, as WAV</h1>
+      <p class="lead">A silent Button feels unfinished. These twelve clicks are short enough to fire on click without a trail.</p>
+      <p>Original sine tones, 44.1 kHz WAV. Unity imports WAV as AudioClip. Pay $0 for the zip.</p>
 
       <h2>Hear three of them</h2>
       <div class="samples">
@@ -96,14 +97,20 @@
         </figure>
       </div>
 
-      <h2>Hook a click in Godot 4</h2>
+      <h2>Hook a click in Unity</h2>
       <ol>
-        <li>Download the free pack. Import <code>click_primary.wav</code> into <code>res://sfx/</code>.</li>
-        <li>Add an <code>AudioStreamPlayer</code>. Set Stream to that WAV. Bus: Master or a UI bus.</li>
-        <li>Connect the Button <code>pressed</code> signal:</li>
+        <li>Download the free pack. Drop <code>click_primary.wav</code> into <code>Assets/Audio/</code>.</li>
+        <li>On the Inspector for that clip: Load Type = Decompress On Load. These files are tiny.</li>
+        <li>Add an <code>AudioSource</code> on the Canvas (or a UI audio object). Uncheck Play On Awake.</li>
+        <li>On the Button’s On Click (), call a one-shot:</li>
       </ol>
-      <p><code>$Click.play()</code></p>
-      <p>If the player can mash, call <code>stop()</code> then <code>play()</code>, or use a one-shot player. These files are under 150 ms, so overlap is rare.</p>
+<pre>public AudioSource ui;
+public AudioClip click;
+
+public void OnPressed() {
+    ui.PlayOneShot(click);
+}</pre>
+      <p>Use <code>PlayOneShot</code>, not <code>Play()</code>, so a mash does not cut the last click. Files are under 150 ms, so overlap is rare.</p>
 
       <h2>Which file where</h2>
       <ul>
@@ -116,8 +123,8 @@
       <p>Personal and commercial games are fine. Don’t resell the zip as another pack.</p>
 
       <div class="cta">
-        <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free Godot sounds</a>
-        <p class="more">Playful menus: <a href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Retro Soft</a> ($1+). Unity: <a href="unity-ui-sounds.html">Unity UI sounds</a>. Figma: <a href="figma-ui-sounds.html">prototype sounds</a>.</p>
+        <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free Unity sounds</a>
+        <p class="more">Tool-software clicks: <a href="https://mikroconsult.gumroad.com/l/crisp-ui-sounds">Crisp Pro</a> ($1+). Godot version: <a href="godot-ui-sounds.html">Godot UI sounds</a>. Figma: <a href="figma-ui-sounds.html">prototype sounds</a>.</p>
       </div>
     </article>
     <p class="foot"><a href="./" style="color:inherit">All products</a> · <a href="demo.html" style="color:inherit">Listen</a> · <a href="free-ui-sounds.html" style="color:inherit">Free WAV pack</a></p>
