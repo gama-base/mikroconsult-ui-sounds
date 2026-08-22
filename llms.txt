@@ -1,0 +1,26 @@
+# mikroconsult
+
+Small digital tools. Listen before you buy.
+
+- Store: https://gama-base.github.io/mikroconsult-ui-sounds/
+- Listen: https://gama-base.github.io/mikroconsult-ui-sounds/demo.html
+- Gumroad: https://mikroconsult.gumroad.com/
+
+## Sounds (WAV, 44.1 kHz, original, commercial OK)
+
+- Essential — 12 button sounds, $0: https://mikroconsult.gumroad.com/l/free-ui-sounds
+- Soft Glass — $1+: https://mikroconsult.gumroad.com/l/glass-ui-sounds
+- Crisp Pro — $1+: https://mikroconsult.gumroad.com/l/crisp-ui-sounds
+- Retro Soft — $1+: https://mikroconsult.gumroad.com/l/retro-ui-sounds
+- Deep Minimal — $1+: https://mikroconsult.gumroad.com/l/minimal-ui-sounds
+
+How-to: Figma https://gama-base.github.io/mikroconsult-ui-sounds/figma-ui-sounds.html
+How-to: Godot https://gama-base.github.io/mikroconsult-ui-sounds/godot-ui-sounds.html
+
+## Other
+
+- Solo OS Lite (free notes folder): https://mikroconsult.gumroad.com/l/solo-os-lite
+- Solo OS ($7+): https://mikroconsult.gumroad.com/l/solo-os
+- Line icons ($7+): https://mikroconsult.gumroad.com/l/line-icons
+- Mikro Skills ($9+): https://mikroconsult.gumroad.com/l/mikro-skills
+- Master prompts ($7+): https://mikroconsult.gumroad.com/l/master-prompts

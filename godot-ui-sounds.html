@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Godot UI sound effects (WAV) — button clicks</title>
+<meta name="description" content="Short WAV button clicks for Godot. Drop on an AudioStreamPlayer, play() on button press. Twelve files, $0, commercial use OK."/>
+<link rel="canonical" href="https://gama-base.github.io/mikroconsult-ui-sounds/godot-ui-sounds.html"/>
+<meta property="og:title" content="Godot UI sound effects (WAV) — button clicks"/>
+<meta property="og:description" content="Attach a short WAV click to a Godot Button. 44.1 kHz. Free pack, commercial OK."/>
+<meta property="og:image" content="https://gama-base.github.io/mikroconsult-ui-sounds/cover.png"/>
+<meta property="og:url" content="https://gama-base.github.io/mikroconsult-ui-sounds/godot-ui-sounds.html"/>
+<meta property="og:type" content="article"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Add a button click in Godot",
+      "description": "Play a short WAV UI click from a Godot Button using AudioStreamPlayer.",
+      "totalTime": "PT3M",
+      "tool": {"@type": "HowToTool", "name": "Godot"},
+      "supply": {"@type": "HowToSupply", "name": "mikroconsult Essential UI WAV pack"},
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Get the WAVs", "text": "Download the free Essential pack. Pay $0. Unzip. Import click_primary.wav into res://."},
+        {"@type": "HowToStep", "position": 2, "name": "Add a player", "text": "Add an AudioStreamPlayer (or AudioStreamPlayer2D). Set Stream to click_primary.wav."},
+        {"@type": "HowToStep", "position": 3, "name": "Hook the button", "text": "On the Button pressed signal, call player.play()."},
+        {"@type": "HowToStep", "position": 4, "name": "Keep it short", "text": "These files are under 150 ms so they do not stack if the player mashes the button."}
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Essential — 12 UI clicks (free WAV)",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "url": "https://mikroconsult.gumroad.com/l/free-ui-sounds"}
+    }
+  ]
+}
+</script>
+<style>
+  :root { --bg:#E8E2D6; --paper:#FAF7F2; --ink:#1C1917; --muted:#57534E; --line:#D6D3D1; --teal:#0F766E; --teal2:#115E59; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+  .wrap { max-width:720px; margin:0 auto; padding:28px 18px 72px; }
+  .crumb { font-size:13px; margin:0 0 16px; color:var(--muted); }
+  .crumb a { color:var(--teal2); text-decoration:none; }
+  article { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:28px 26px 32px; }
+  .eyebrow { margin:0 0 8px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700; }
+  h1 { margin:0 0 12px; font-size:clamp(1.5rem,3.6vw,2.05rem); line-height:1.18; }
+  h2 { margin:22px 0 8px; font-size:1.05rem; }
+  p { margin:0 0 12px; color:#44403C; }
+  .lead { color:var(--muted); }
+  ol, ul { margin:0 0 14px; padding-left:1.15rem; color:#44403C; }
+  li { margin:4px 0; }
+  code { font-size:.9em; background:#fff; border:1px solid var(--line); border-radius:6px; padding:1px 5px; }
+  .samples { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 6px; }
+  .samples figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+  .samples figcaption { font-size:12px; color:var(--muted); margin-bottom:6px; }
+  audio { width:100%; max-width:280px; height:44px; display:block; position:relative; z-index:2; }
+  .playbtn { border:0; background:#1F6F5B; color:#fff; font-weight:700; font-size:14px; border-radius:10px; padding:10px 14px; cursor:pointer; width:100%; max-width:280px; }
+  .cta { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+  .btn { display:inline-flex; justify-content:center; align-items:center; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:14px; border-radius:12px; padding:12px 16px; }
+  .btn:hover { background:var(--teal2); }
+  .more { margin:14px 0 0; font-size:14px; color:var(--muted); }
+  .more a { color:var(--teal2); }
+  .foot { margin-top:18px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="crumb"><a href="./">mikroconsult</a> · notes</p>
+    <article>
+      <p class="eyebrow">godot</p>
+      <h1>Godot UI sound effects, as WAV</h1>
+      <p class="lead">Menus feel cheap when they are silent. These twelve clicks are short enough to fire on a Button without stacking.</p>
+      <p>Original sine tones, 44.1 kHz WAV. Godot imports WAV natively. Pay $0 for the zip.</p>
+
+      <h2>Hear three of them</h2>
+      <div class="samples">
+        <figure>
+          <figcaption>click_primary · button</figcaption>
+          <audio controls preload="auto" playsinline src="samples/click_primary.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
+        </figure>
+        <figure>
+          <figcaption>success · confirm</figcaption>
+          <audio controls preload="auto" playsinline src="samples/success.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
+        </figure>
+        <figure>
+          <figcaption>notify · toast</figcaption>
+          <audio controls preload="auto" playsinline src="samples/notify.mp3?v=3"></audio>
+          <button type="button" class="playbtn">Play</button>
+        </figure>
+      </div>
+
+      <h2>Hook a click in Godot 4</h2>
+      <ol>
+        <li>Download the free pack. Import <code>click_primary.wav</code> into <code>res://sfx/</code>.</li>
+        <li>Add an <code>AudioStreamPlayer</code>. Set Stream to that WAV. Bus: Master or a UI bus.</li>
+        <li>Connect the Button <code>pressed</code> signal:</li>
+      </ol>
+      <p><code>$Click.play()</code></p>
+      <p>If the player can mash, call <code>stop()</code> then <code>play()</code>, or use a one-shot player. These files are under 150 ms, so overlap is rare.</p>
+
+      <h2>Which file where</h2>
+      <ul>
+        <li>Menu button → <code>click_primary.wav</code></li>
+        <li>Back / cancel → <code>click_secondary.wav</code></li>
+        <li>Toggle → <code>toggle_on.wav</code> / <code>toggle_off.wav</code></li>
+        <li>Save / ok → <code>success.wav</code></li>
+        <li>Blocked action → <code>error.wav</code></li>
+      </ul>
+      <p>Personal and commercial games are fine. Don’t resell the zip as another pack.</p>
+
+      <div class="cta">
+        <a class="btn" href="https://mikroconsult.gumroad.com/l/free-ui-sounds">Get the free Godot sounds</a>
+        <p class="more">Playful menus: <a href="https://mikroconsult.gumroad.com/l/retro-ui-sounds">Retro Soft</a> ($1+). Figma version: <a href="figma-ui-sounds.html">Figma prototype sounds</a>.</p>
+      </div>
+    </article>
+    <p class="foot"><a href="./" style="color:inherit">All products</a> · <a href="demo.html" style="color:inherit">Listen</a> · <a href="free-ui-sounds.html" style="color:inherit">Free WAV pack</a></p>
+  </div>
+<script>
+document.addEventListener("click", function (e) {
+  var b = e.target.closest(".playbtn");
+  if (!b) return;
+  e.preventDefault();
+  var a = b.parentNode.querySelector("audio");
+  if (!a) return;
+  a.currentTime = 0;
+  var p = a.play();
+  if (p && p.then) {
+    p.then(function () { b.textContent = "Play again"; })
+     .catch(function () { b.textContent = "Could not play — use the bar above"; });
+  }
+});
+</script>
+</body>
+</html>
